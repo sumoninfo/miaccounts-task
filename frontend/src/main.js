@@ -1,5 +1,13 @@
-import { createApp } from 'vue'
+import "bootstrap/dist/css/bootstrap.min.css"
+import {createApp} from 'vue'
 import './style.css'
-import App from './App.vue'
+import App         from './App.vue'
+import router      from './router'
 
-createApp(App).mount('#app')
+
+//services
+import ApiService from './services/api.service.js'
+
+ApiService.init();
+
+createApp(App).use(router).mount('#app')
