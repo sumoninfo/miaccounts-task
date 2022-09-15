@@ -40,6 +40,7 @@
 You can now access the server at http://localhost:8000
 
 #
+
 #===========================================#
 
 # Miaccounts-frontend
@@ -55,9 +56,11 @@ You can now access the server at http://localhost:8000
     cp .env.example .env
 
 ### Install all the dependencies using npm
+
     npm install 
 
 ### Compiles and hot-reloads for development
+
     npm run dev
 
-You can now access the server at http://localhost:5173
+You can now access the project at http://localhost:5173
