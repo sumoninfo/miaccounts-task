@@ -17,7 +17,7 @@ class AccountHeadResource extends JsonResource
         return [
             'id'            => $this->id,
             'name'          => $this->name,
-            'total_amounts' => $this->getTotalAmounts()
+            'total_amounts' => $this->total_amounts
         ];
     }
 }
