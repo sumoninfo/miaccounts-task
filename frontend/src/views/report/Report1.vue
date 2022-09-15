@@ -1,4 +1,5 @@
 <template>
+    <h3 class="text-center">Report 1</h3>
     <table class="table table-borderless">
         <thead class="border-bottom">
         <tr>
