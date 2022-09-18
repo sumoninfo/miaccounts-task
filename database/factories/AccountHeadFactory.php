@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Group;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class AccountHeadFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name'     => $this->faker->name(),
+            'group_id' => Group::query()->get()->random()->id
         ];
     }
 }

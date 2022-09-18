@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Group;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,12 +16,8 @@ class GroupFactory extends Factory
      */
     public function definition()
     {
-        $group_id = null;
-        if (Group::query()->count() > 0)
-            $group_id = Group::all()->random()->id ?? null;
         return [
-            'name'      => $this->faker->name(),
-            'parent_id' => $this->faker->randomElement([null, $group_id]),
+            'name' => $this->faker->name(),
         ];
     }
 }
