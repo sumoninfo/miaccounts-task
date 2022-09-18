@@ -9,5 +9,9 @@ import router      from './router'
 import ApiService from './services/api.service.js'
 
 ApiService.init();
+//global functions
+import filters    from './helpers/filters'
 
-createApp(App).use(router).mount('#app')
+const app                            = createApp(App)
+app.config.globalProperties.$filters = filters
+app.use(router).mount('#app')

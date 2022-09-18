@@ -23,12 +23,15 @@ class Group extends Model
     /**
      * @return HasMany
      */
-    public function children() {
-        return $this->hasMany(self::class, 'parent_id','id');
+    public function childrens() {
+        return $this->hasMany(self::class, 'parent_id','id')->with('accountHeads');
     }
 
     public function accountHeads()
     {
-        return $this->hasMany(AccountHead::class);
+        return $this->hasMany(AccountHead::class)->addSelect(['total_amounts' => Transaction::query()
+            ->whereColumn('account_head_id', 'account_heads.id')
+            ->selectRaw('sum(debit-credit) as total_amounts')
+        ]);
     }
 }
