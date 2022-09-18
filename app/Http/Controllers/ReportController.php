@@ -18,16 +18,26 @@ class ReportController extends Controller
      * @param Request $request
      * @return AnonymousResourceCollection
      */
-    public function report(Request $request)
+    public function report1(Request $request)
     {
         $query = Group::query()->where('parent_id', null)
             ->with(['childrens.childrens', 'accountHeads'])
             ->get();
         return GroupResource::collection($query);
-       /* $query = AccountHead::addSelect(['total_amounts' => Transaction::query()
+    }
+
+    /**
+     *  get report 2
+     *
+     * @param Request $request
+     * @return AnonymousResourceCollection
+     */
+    public function report2(Request $request)
+    {
+        $query = AccountHead::addSelect(['total_amounts' => Transaction::query()
             ->whereColumn('account_head_id', 'account_heads.id')
             ->selectRaw('sum(debit-credit) as total_amounts')
         ])->get();
-        return AccountHeadResource::collection($query);*/
+        return AccountHeadResource::collection($query);
     }
 }
