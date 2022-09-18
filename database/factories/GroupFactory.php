@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Group;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AccountHead>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Group>
  */
-class AccountHeadFactory extends Factory
+class GroupFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +17,7 @@ class AccountHeadFactory extends Factory
     public function definition()
     {
         return [
-            'name'     => $this->faker->name(),
-            'group_id' => Group::query()->get()->random()->id
+            'name' => $this->faker->name(),
         ];
     }
 }

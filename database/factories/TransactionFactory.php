@@ -18,8 +18,8 @@ class TransactionFactory extends Factory
     {
         return [
             'date'   => $this->faker->dateTimeBetween('-6 months', 'now'),
-            'credit' => $this->faker->randomFloat(0, 10, 10000),
             'debit'  => $this->faker->randomFloat(0, 10, 10000),
+            'credit' => $this->faker->randomFloat(0, 10, 1000),
         ];
     }
 }

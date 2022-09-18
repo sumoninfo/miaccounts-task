@@ -3,16 +3,15 @@
     <table class="table table-borderless">
         <thead class="border-bottom">
         <tr>
-            <th scope="col">Group</th>
-            <th scope="col">Group/Heads</th>
-            <th scope="col">Total Amount</th>
+            <th scope="col">Group Group/Heads</th>
+            <th scope="col" class="text-end">Total Amount</th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="(list, index) in lists">
-            <th scope="row">{{ index + 1 }}</th>
             <td>{{ list.name }}</td>
-            <td>{{ list.total_amounts }}</td>
+            <AccountHead :account_heads="list.account_heads"/>
+            <ChildGroup :childrens="list.childrens"/>
         </tr>
         </tbody>
     </table>
@@ -21,9 +20,12 @@
 <script>
 import {onMounted, ref} from "vue";
 import ApiService       from "../../services/api.service.js";
-
+import ChildGroup       from '../../components/ChildGroup.vue'
+import AccountHead      from "../../components/AccountHead.vue";
 export default {
     name: "Report1",
+    components: {AccountHead, ChildGroup},
+
     setup() {
         let lists           = ref([])
         let errors          = ref('')
