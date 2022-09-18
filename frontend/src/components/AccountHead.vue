@@ -1,5 +1,5 @@
 <template>
-    <table class="table table-borderless">
+    <table :class="class_name">
         <tr v-for="(account_head) in account_heads">
             <td>{{ account_head.name }}</td>
             <td class="text-end">
@@ -12,7 +12,10 @@
 <script>
 export default {
     name : "AccountHead",
-    props: ['account_heads']
+    props     : {
+        account_heads       : {type: Array},
+        class_name  : {default: 'table table-borderless'},
+    },
 }
 </script>
 

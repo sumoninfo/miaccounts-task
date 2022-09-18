@@ -1,5 +1,5 @@
 <template>
-    <table class="table table-borderless">
+    <table :class="class_name">
         <tr v-for="(children) in childrens">
             <td>{{ children.name }}</td>
             <AccountHead :account_heads="children.account_heads"/>
@@ -14,7 +14,10 @@ import AccountHead from "./AccountHead.vue";
 export default {
     name      : "ChildGroup",
     components: {AccountHead},
-    props     : ['childrens']
+    props     : {
+        childrens       : {type: Array},
+        class_name  : {default: 'table table-borderless'},
+    },
 }
 </script>
 
