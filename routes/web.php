@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Group;
 use Illuminate\Support\Facades\Route;
 
 /*
