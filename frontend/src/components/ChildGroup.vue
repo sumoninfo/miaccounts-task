@@ -1,7 +1,7 @@
 <template>
     <table :class="class_name">
         <tr v-for="(children) in childrens">
-            <td>{{ children.name }}</td>
+            <td class="align-baseline">{{ children.name }}</td>
             <AccountHead :account_heads="children.account_heads"/>
             <ChildGroup :childrens="children.childrens"/>
         </tr>

@@ -9,7 +9,7 @@
         </thead>
         <tbody>
         <tr v-for="(list, index) in lists">
-            <td>{{ list.name }}</td>
+            <td class="align-baseline">{{ list.name }}</td>
             <AccountHead :account_heads="list.account_heads"/>
             <ChildGroup :childrens="list.childrens"/>
         </tr>
