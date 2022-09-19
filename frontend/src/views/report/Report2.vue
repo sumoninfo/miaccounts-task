@@ -35,7 +35,7 @@ export default {
         let errors          = ref('')
         const getReportData = () => {
             ApiService.get('/report2').then(({data}) => {
-                lists.value = data
+                lists.value = data.data
             }).catch(error => {
                 errors.value = error.response.data.errors;
             });

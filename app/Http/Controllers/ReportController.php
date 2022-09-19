@@ -57,6 +57,6 @@ class ReportController extends Controller
                     'group_3'       => $group_3,
                 ];
             });
-        return response()->json($query);
+        return response()->json(['data' => $query]);
     }
 }
