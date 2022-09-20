@@ -21,6 +21,8 @@ class ReportController extends Controller
     {
         $query = Group::query()->where('parent_id', null)
             ->with(['childrens.childrens', 'accountHeads'])
+            ->whereHas('childrens.childrens')
+            ->orWhereHas('accountHeads')
             ->get();
         return GroupResource::collection($query);
     }
